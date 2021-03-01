@@ -93,16 +93,13 @@ const App: React.FC = () => {
   }
 
   function loadMore() {
-    // dispatch({ type: 'SET_LOADING' })
     axios
       .get(`/api/search/${photos.query}/${photos.page}`)
       .then(res => {
         dispatch({ type: 'LOAD_MORE', payload: res.data.results })
-        // dispatch({ type: 'SET_LOADING' })
       })
       .catch(err => {
         console.log(err.response)
-        // dispatch({ type: 'SET_LOADING' })
       })
   }
 
