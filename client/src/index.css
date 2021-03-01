@@ -1,3 +1,8 @@
+:root {
+  --light: rgb(194, 194, 194);
+  --dark: rgb(87, 87, 87);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,15 +16,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-body {
-  background-color: rgb(228, 228, 228);
 }
 
 .search {
