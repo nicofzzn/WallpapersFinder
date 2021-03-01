@@ -56,7 +56,7 @@ div .images {
   position: relative;
 }
 
-img {
+.single-image {
   width: 100%;
   height: 50vh;
   object-fit: cover;
@@ -71,6 +71,7 @@ img {
   background-color: rgba(0, 0, 0, 0.4);
   animation-name: image-hover;
   animation-duration: 0.1s;
+  cursor: zoom-in;
 }
 
 @keyframes image-hover {
@@ -82,18 +83,13 @@ img {
   }
 }
 
-.info .bottom {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .author {
   position: absolute;
+  cursor: default;
   bottom: 5%;
   left: 5%;
   height: 32px;
-  width: 70%;
+  max-width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -134,6 +130,31 @@ img {
   margin-bottom: 2em;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 5em;
+}
+
+.modal {
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.modal img {
+  max-width: calc(100vw - 10em);
+  max-height: calc(100vh - 10em);
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 850px) {
   .images {
     margin: 3em 1em;
@@ -145,8 +166,17 @@ img {
     height: 50vh;
   }
 
-  img {
+  .single-image {
     height: 50vh;
+  }
+
+  .overlay {
+    padding: 2em;
+  }
+
+  .modal img {
+    max-width: calc(100vw - 4em);
+    max-height: calc(100vh - 4em);
   }
 }
 
@@ -161,7 +191,7 @@ img {
     height: 60vh;
   }
 
-  img {
+  .single-image {
     height: 60vh;
   }
 }
